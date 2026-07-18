@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Tower Fallacy Codex • Sharpen Your Wit</title>
+    <meta name="description" content="Master 23 logical fallacies with deep explanations, etymology, mnemonics, and practical triggers for debate mastery and personal growth. High Tower Study Series. Free educational resource.">
+    <meta property="og:title" content="High Tower Fallacy Codex • 23 Fallacies to Sharpen Your Wit">
+    <meta property="og:description" content="A beautiful, practical guide to logical fallacies for better debate, clearer thinking, and catching your own rationalizations. Includes the original High Tower Cheat Sheet PDF.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fallacy.ahightower.com">
+    <meta property="og:image" content="https://stories.ahightower.com/og-fallacy-codex.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --accent: #22d3ee;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .fallacy-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fallacy-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .modal {
+            animation: modalPopIn 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+
+        @keyframes modalPopIn {
+            from {
+                opacity: 0;
+                transform: scale(0.96) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .nav-active {
+            color: #22d3ee;
+            border-bottom: 2px solid #22d3ee;
+        }
+
+        .fallacy-number {
+            background: linear-gradient(135deg, #164e63, #0e7490);
+            color: white;
+            font-weight: 700;
+            font-size: 0.875rem;
+            letter-spacing: -0.02em;
+        }
+
+        .prose-custom {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .prose-custom h4 {
+            font-weight: 600;
+            color: #e0f2fe;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
+        }
+
+        .syllable-badge {
+            font-size: 0.65rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            padding-top: 0.05rem;
+            padding-bottom: 0.05rem;
+            background-color: #164e63;
+            color: #67e8f9;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #67e8f9;
+        }
+
+        .example-box {
+            background-color: #0f172a;
+            border-left: 3px solid #22d3ee;
+        }
+
+        .mnemonic-box {
+            background: linear-gradient(90deg, #164e63, #0e7490);
+        }
+
+        .trigger-box {
+            background-color: #1e2937;
+            border: 1px solid #334155;
+        }
+
+        .codex-grid {
+            scrollbar-width: thin;
+            scrollbar-color: #334155 #0f172a;
+        }
+
+        .fallacy-pill {
+            transition: all 0.1s ease;
+        }
+
+        .search-input {
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 0 0 3px rgba(103, 232, 249, 0.1);
+        }
+
+        .ht-gradient {
+            background: linear-gradient(90deg, #164e63, #0e7490);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200">
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-lg border-b border-slate-800">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-x-3">
+                    <div class="flex items-center gap-x-2.5">
+                        <div class="w-9 h-9 bg-cyan-900 rounded-2xl flex items-center justify-center ring-1 ring-cyan-700/50">
+                            <i class="fa-solid fa-chess-rook text-cyan-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="font-display text-2xl font-semibold tracking-tighter">High Tower</span>
+                            <span class="font-display text-2xl font-semibold tracking-tighter text-cyan-400">Codex</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:block px-3 py-1 text-[10px] font-mono tracking-[2px] text-cyan-500/70 border border-cyan-900 rounded-full">FALLACY EDITION</div>
+                </div>
+
+                <div class="flex items-center gap-x-2 text-sm">
+                    <a href="#catalog" class="px-4 py-2 hover:bg-slate-900 rounded-3xl text-slate-300 hover:text-white transition-colors">Catalog</a>
+                    <a href="#practice" class="px-4 py-2 hover:bg-slate-900 rounded-3xl text-slate-300 hover:text-white transition-colors">Practice</a>
+                    <a href="#pdf" class="px-4 py-2 hover:bg-slate-900 rounded-3xl text-slate-300 hover:text-white transition-colors">Cheat Sheet</a>
+                    
+                    <div class="w-px h-5 bg-slate-700 mx-1"></div>
+                    
+                    <button onclick="showShareModal()" 
+                            class="flex items-center gap-x-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-3xl text-sm font-medium transition-colors">
+                        <i class="fa-solid fa-share-alt mr-1.5"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="max-w-screen-xl mx-auto px-6 pt-16 pb-12">
+        <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-3xl bg-slate-900 border border-slate-800 mb-6">
+                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                <span class="text-emerald-400 text-xs font-semibold tracking-widest">HIGH TOWER STUDY SERIES</span>
+            </div>
+            
+            <h1 class="section-header leading-none tracking-tighter mb-4">
+                Sharpen your wit.<br>
+                <span class="text-cyan-400">Master the patterns</span><br>
+                that shape every argument.
+            </h1>
+            
+            <p class="max-w-lg text-xl text-slate-400 mb-8">
+                A practical codex of 23 logical fallacies. Deep explanations, etymology, mnemonics, 
+                and real triggers for your inner dialogue — so you can debate cleanly and stop 
+                rationalizing your own faults.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3">
+                <button onclick="document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' })" 
+                        class="px-7 py-3.5 bg-white text-slate-950 hover:bg-slate-100 font-semibold rounded-3xl flex items-center gap-x-2 transition-all active:scale-[0.985]">
+                    <span>Explore the 23 Fallacies</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                
+                <button onclick="document.getElementById('pdf').scrollIntoView({ behavior: 'smooth' })" 
+                        class="px-6 py-3.5 border border-slate-700 hover:bg-slate-900 font-medium rounded-3xl flex items-center gap-x-2 transition-colors">
+                    <i class="fa-solid fa-download mr-2"></i>
+                    <span>Get the PDF Cheat Sheet</span>
+                </button>
+            </div>
+            
+            <div class="mt-8 flex items-center gap-x-6 text-sm text-slate-500">
+                <div class="flex items-center gap-x-1.5">
+                    <i class="fa-solid fa-check text-emerald-400"></i>
+                    <span>Free forever • Educational use</span>
+                </div>
+                <div class="flex items-center gap-x-1.5">
+                    <i class="fa-solid fa-users text-cyan-400"></i>
+                    <span>Built for debaters, leaders &amp; self-aware humans</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MISSION / WHY THIS EXISTS -->
+    <section class="max-w-screen-xl mx-auto px-6 py-12 border-t border-slate-800">
+        <div class="grid md:grid-cols-12 gap-x-8 gap-y-8 items-center">
+            <div class="md:col-span-5">
+                <div class="sticky top-20">
+                    <h2 class="font-display text-4xl tracking-tighter font-semibold mb-4">Why this codex exists</h2>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">
+                        Most people learn fallacies as trivia. We built this so you can <span class="text-white font-medium">feel</span> them in real time — 
+                        in heated debates, in your own justifications, and in the manipulative language you encounter daily.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="md:col-span-7">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5">
+                        <div class="text-cyan-400 mb-3"><i class="fa-solid fa-comments text-xl"></i></div>
+                        <div class="font-semibold mb-1.5">Debate Mastery</div>
+                        <div class="text-sm text-slate-400 leading-snug">Spot manipulation instantly. Respond with precision instead of emotion. Become the person others can't easily dismiss.</div>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5">
+                        <div class="text-cyan-400 mb-3"><i class="fa-solid fa-user-check text-xl"></i></div>
+                        <div class="font-semibold mb-1.5">Personal Growth</div>
+                        <div class="text-sm text-slate-400 leading-snug">Catch yourself rationalizing faults, avoiding discomfort, or protecting ego. Turn inner dialogue into a truth-seeking engine.</div>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5">
+                        <div class="text-cyan-400 mb-3"><i class="fa-solid fa-handshake text-xl"></i></div>
+                        <div class="font-semibold mb-1.5">Constructive Influence</div>
+                        <div class="text-sm text-slate-400 leading-snug">Learn to name patterns gently so the other person can self-correct — without shame or escalation. Model the standard you want.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF ACCESS -->
+    <section id="pdf" class="max-w-screen-xl mx-auto px-6 py-14 border-t border-slate-800 bg-slate-900/30">
+        <div class="max-w-2xl mx-auto text-center mb-8">
+            <div class="inline-block px-4 py-1 rounded-2xl bg-cyan-950 text-cyan-400 text-xs font-mono tracking-widest mb-3">POCKET REFERENCE</div>
+            <h3 class="font-display text-3xl tracking-tight font-semibold mb-3">The Original High Tower Cheat Sheet</h3>
+            <p class="text-slate-400">23 fallacies with short rhythmic names designed for fast recall. Perfect companion to this codex.</p>
+        </div>
+        
+        <div class="max-w-md mx-auto">
+            <a href="https://stories.ahightower.com/fallacies.pdf" target="_blank"
+               class="group flex items-center justify-between w-full bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-cyan-800 transition-all rounded-3xl p-5">
+                <div class="flex items-center gap-x-4">
+                    <div class="w-12 h-12 bg-cyan-900/70 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-file-pdf text-3xl text-cyan-400"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">High Tower Logical Fallacy Cheat Sheet</div>
+                        <div class="text-xs text-slate-500">PDF • 1 page • Optimized for printing &amp; mobile</div>
+                    </div>
+                </div>
+                <div class="text-cyan-400 group-hover:translate-x-0.5 transition-transform">
+                    <i class="fa-solid fa-download text-xl"></i>
+                </div>
+            </a>
+            <p class="text-center text-[10px] text-slate-500 mt-3">Print it. Keep it on your phone. Use it until the patterns become automatic.</p>
+        </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section id="catalog" class="max-w-screen-xl mx-auto px-6 pt-12 pb-8">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-8">
+            <div>
+                <h2 class="font-display text-4xl tracking-tighter font-semibold">The 23 Fallacies</h2>
+                <p class="text-slate-400 mt-1">Click any card for deep dive: etymology, nuances, inner triggers &amp; response scripts.</p>
+            </div>
+            
+            <div class="relative w-full md:w-80">
+                <input id="search-input" type="text" placeholder="Search fallacies (e.g. straw, hasty, burden)..." 
+                       onkeyup="filterFallacies()"
+                       class="search-input w-full bg-slate-900 border border-slate-700 focus:border-cyan-700 text-white placeholder:text-slate-500 pl-11 py-3 rounded-3xl text-sm outline-none">
+                <i class="fa-solid fa-search absolute left-4 top-4 text-slate-500"></i>
+            </div>
+        </div>
+
+        <!-- Fallacy Grid -->
+        <div id="fallacy-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 codex-grid">
+            <!-- Populated by JavaScript -->
+        </div>
+        
+        <div class="mt-6 text-center">
+            <p class="text-xs text-slate-500">Short names are rhythmic for memorization. Say them out loud. The rhythm sticks.</p>
+        </div>
+    </section>
+
+    <!-- PRACTICE SECTION -->
+    <section id="practice" class="max-w-screen-xl mx-auto px-6 py-14 border-t border-slate-800">
+        <div class="max-w-3xl mx-auto">
+            <div class="flex items-center gap-x-3 mb-6">
+                <div class="px-3 py-1 bg-emerald-900/30 text-emerald-400 text-xs font-semibold tracking-widest rounded-2xl">LIVE TRAINING</div>
+                <h2 class="font-display text-3xl tracking-tight font-semibold">Spot the Fallacy • Inner Dialogue Trainer</h2>
+            </div>
+            
+            <p class="text-slate-400 mb-8">Build the muscle. Read the scenario, identify the pattern, then see how you would respond in real life.</p>
+            
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl p-7">
+                <div id="practice-area">
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">SCENARIO #<span id="scenario-num">01</span></div>
+                            <button onclick="newScenario()" 
+                                    class="text-xs flex items-center gap-x-1.5 px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded-2xl text-emerald-400 transition-colors">
+                                <i class="fa-solid fa-sync-alt mr-1"></i> 
+                                <span>NEW SCENARIO</span>
+                            </button>
+                        </div>
+                        
+                        <div id="scenario-text" class="text-lg leading-snug bg-slate-950 border border-slate-700 p-5 rounded-2xl min-h-[92px]">
+                            <!-- JS injected -->
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="text-xs uppercase tracking-widest text-emerald-400 font-semibold mb-2">WHICH FALLACY IS AT PLAY?</div>
+                        <div id="fallacy-options" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                    
+                    <div id="feedback-area" class="hidden mt-5 p-5 bg-slate-950 border border-emerald-900/50 rounded-2xl">
+                        <div id="feedback-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-5 text-xs text-center text-slate-500">
+                This trains both recognition speed and constructive response — the two skills that actually matter.
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA / PHILOSOPHY -->
+    <section class="max-w-screen-xl mx-auto px-6 py-16 border-t border-slate-800">
+        <div class="max-w-2xl mx-auto text-center">
+            <div class="mx-auto w-12 h-12 bg-cyan-900/60 rounded-2xl flex items-center justify-center mb-6 ring-1 ring-cyan-800">
+                <i class="fa-solid fa-brain text-cyan-400 text-3xl"></i>
+            </div>
+            <h3 class="font-display text-3xl tracking-tighter font-semibold mb-4">The goal isn't to win arguments.<br>It's to stop lying to yourself and others.</h3>
+            <p class="text-slate-400 max-w-md mx-auto">When you can name the pattern in the moment — in a meeting, in a relationship, in your own head — you gain the rarest superpower: the ability to choose truth over comfort.</p>
+            
+            <div class="mt-8 flex justify-center gap-x-3">
+                <button onclick="document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' })" 
+                        class="px-6 py-3 text-sm font-medium border border-slate-600 hover:bg-slate-900 rounded-3xl transition-colors">Start Exploring Fallacies</button>
+                <button onclick="showShareModal()" class="px-6 py-3 text-sm font-medium bg-cyan-600 hover:bg-cyan-500 text-white rounded-3xl transition-colors">Share this Codex</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-slate-950">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 text-xs text-slate-500">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-4">
+                <div>
+                    <span class="font-mono">High Tower Study Series</span> — Fallacy Codex v1.0<br>
+                    Part of the <a href="https://ahightower.com" class="hover:text-slate-300">ahightower.com</a> ecosystem • Tower District, Fresno
+                </div>
+                <div class="flex items-center gap-x-5">
+                    <a href="https://stories.ahightower.com/fallacies.pdf" class="hover:text-slate-300">Download PDF</a>
+                    <span class="text-slate-700">•</span>
+                    <a href="#" onclick="showShareModal(); return false" class="hover:text-slate-300">Share</a>
+                    <span class="text-slate-700">•</span>
+                    <span>Free to share for education</span>
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-slate-800 text-[10px] text-slate-600">
+                Built with precision for people who value clear reasoning. The short names in this codex are designed for rapid recall in the heat of conversation.
+            </div>
+        </div>
+    </footer>
+
+    <!-- DETAIL MODAL -->
+    <div id="detail-modal" onclick="if (event.target.id === 'detail-modal') hideModal()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] flex items-center justify-center p-4 md:p-8">
+        <div onclick="event.stopImmediatePropagation()" 
+             class="modal bg-slate-900 border border-slate-700 w-full max-w-3xl max-h-[92vh] rounded-3xl overflow-hidden flex flex-col shadow-2xl">
+            
+            <!-- Modal Header -->
+            <div class="px-7 pt-6 pb-4 border-b border-slate-700 flex items-start justify-between bg-slate-950">
+                <div class="flex items-center gap-x-4">
+                    <div id="modal-number-badge" 
+                         class="fallacy-number w-9 h-9 flex-shrink-0 rounded-2xl flex items-center justify-center text-lg font-bold"></div>
+                    <div>
+                        <div id="modal-short-name" class="font-display text-3xl tracking-tighter font-semibold"></div>
+                        <div id="modal-syllables" class="text-cyan-400 text-xs tracking-widest font-mono"></div>
+                    </div>
+                </div>
+                
+                <button onclick="hideModal()" class="text-slate-400 hover:text-white w-10 h-10 flex items-center justify-center text-2xl leading-none">&times;</button>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="overflow-y-auto flex-1 p-7 space-y-8 text-[15px]" id="modal-body">
+                <!-- Content injected by JS -->
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="border-t border-slate-700 bg-slate-950 px-7 py-4 flex items-center justify-between text-xs">
+                <div class="flex items-center gap-x-2 text-slate-400">
+                    <button onclick="prevFallacy()" class="flex items-center gap-x-1 hover:text-white transition-colors px-3 py-1 rounded-2xl hover:bg-slate-800">
+                        <i class="fa-solid fa-chevron-left mr-1"></i> <span>Previous</span>
+                    </button>
+                    <button onclick="nextFallacy()" class="flex items-center gap-x-1 hover:text-white transition-colors px-3 py-1 rounded-2xl hover:bg-slate-800">
+                        <span>Next</span> <i class="fa-solid fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+                <div class="text-slate-500 text-[10px]">High Tower Codex • Educational use encouraged</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="share-modal" onclick="if (event.target.id === 'share-modal') hideShareModal()" class="hidden fixed inset-0 bg-black/60 z-[110] flex items-end md:items-center justify-center">
+        <div onclick="event.stopImmediatePropagation()" class="bg-slate-900 border border-slate-700 w-full md:w-[380px] md:rounded-3xl md:m-8 rounded-t-3xl p-6">
+            <div class="flex justify-between items-center mb-5">
+                <div class="font-semibold">Share the Codex</div>
+                <button onclick="hideShareModal()" class="text-2xl leading-none text-slate-400">&times;</button>
+            </div>
+            
+            <div class="space-y-2 text-sm">
+                <a href="https://twitter.com/intent/tweet?text=Master%2023%20logical%20fallacies%20with%20the%20High%20Tower%20Fallacy%20Codex%20—%20free%2C%20beautiful%2C%20practical.%20https%3A//fallacy.ahightower.com" target="_blank"
+                   class="flex items-center gap-x-3 px-4 py-3 bg-slate-800 hover:bg-slate-700 rounded-2xl transition-colors">
+                    <i class="fa-brands fa-x-twitter w-5"></i>
+                    <span>Post on X</span>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://fallacy.ahightower.com" target="_blank"
+                   class="flex items-center gap-x-3 px-4 py-3 bg-slate-800 hover:bg-slate-700 rounded-2xl transition-colors">
+                    <i class="fa-brands fa-facebook w-5"></i>
+                    <span>Share on Facebook</span>
+                </a>
+                <button onclick="copyLink()" class="w-full flex items-center gap-x-3 px-4 py-3 bg-slate-800 hover:bg-slate-700 rounded-2xl transition-colors text-left">
+                    <i class="fa-solid fa-link w-5"></i>
+                    <span>Copy link to clipboard</span>
+                </button>
+            </div>
+            
+            <div class="mt-5 text-[10px] text-center text-slate-500">
+                Help others sharpen their thinking. Share freely.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#22d3ee');
+        }
+        
+        // The 23 Fallacies Data - Rich, actionable content
+        const fallaciesData = [
+            {
+                id: 1,
+                short: "Strawman",
+                syllables: "2 syl",
+                fullNames: ["Straw Man Fallacy", "Strawman Argument"],
+                category: "Misrepresentation",
+                etymology: "The name comes from the image of a scarecrow or straw dummy set up in a field — easy to knock over because it isn't real. The term entered political and debate discourse in the 19th century to describe the tactic of misrepresenting an opponent's argument as weaker, more extreme, or different from what was actually said, then attacking that distorted version instead.",
+                definition: "A straw man occurs when someone distorts, exaggerates, oversimplifies, or fabricates an opponent's position so it becomes easier to attack and refute. The real argument is left standing while a fake one is demolished.",
+                nuances: "Can be subtle (slightly overstating implications) or blatant caricature. Often overlaps with Red Herring. It is not a fallacy if you accurately restate and then disagree. In personal development, we frequently strawman our own past decisions or other people's views to protect our current identity.",
+                examples: [
+                    { context: "Relationship", text: "Partner: \"I think we should cook at home more to save money.\" Response: \"So you want us to never go out and live like we're broke?\"" },
+                    { context: "Politics / Online", text: "Person A: \"I support stronger background checks for gun purchases.\" Person B: \"So you want to ban all guns and take them from law-abiding citizens?\"" }
+                ],
+                mnemonic: "Straw Man — Build a dummy out of nothing, then burn it down in public. The tell: 'So you're saying...' or 'That means you believe...'",
+                innerTrigger: "When you feel the urge to attack a slightly more extreme version of what the other person said because the accurate version is harder to refute. Or when defending your ego: 'They basically said I'm a terrible person, so their whole point is invalid.'",
+                responseGuide: "\"I want to make sure I'm not strawmanning you. What I heard you argue is [accurate restatement]. Is that correct? If so, my actual pushback is...\" This single move often de-escalates and earns respect.",
+                related: [8, 2]
+            },
+            {
+                id: 2,
+                short: "Ad Hom",
+                syllables: "2 syl",
+                fullNames: ["Ad Hominem", "Personal Attack Fallacy"],
+                category: "Relevance",
+                etymology: "Latin for 'to the person' or 'against the man.' The full phrase is argumentum ad hominem. Instead of engaging the argument, the attacker targets the character, circumstances, or identity of the person making it.",
+                definition: "Attacking the person who made the argument rather than addressing the argument's merits, evidence, or logic.",
+                nuances: "There is a legitimate form (questioning credibility when expertise or honesty is directly relevant, e.g. 'This witness has been convicted of perjury'). The fallacy version dismisses the claim solely because of who said it. Very common in culture war discourse and social media.",
+                examples: [
+                    { context: "Work / Debate", text: "\"You can't trust his opinion on remote work policy — he's just saying that because he wants to stay home and play video games.\"" },
+                    { context: "Personal", text: "\"Of course she thinks that about taxes. She's never had to work a real job in her life.\"" }
+                ],
+                mnemonic: "Ad Hom — Attack the human, dodge the argument. When the focus shifts from 'what was said' to 'who said it and why we shouldn't listen to them.'",
+                innerTrigger: "You feel defensive or dislike the person, so instead of engaging their point you reach for a character flaw, past mistake, or identity label. 'They're just saying that because they're [trait].'",
+                responseGuide: "\"Even if everything you said about me is true, it doesn't address the actual point I raised. Can we talk about the evidence instead of me?\" Or simply: \"Let's separate the person from the argument.\"",
+                related: [1, 13]
+            },
+            {
+                id: 3,
+                short: "Auth Appeal",
+                syllables: "3 syl",
+                fullNames: ["Appeal to Authority", "Argument from Authority"],
+                category: "Evidence",
+                etymology: "From Latin argumentum ad verecundiam ('appeal to reverence/respect'). The idea is that we defer to experts out of respect, but the fallacy arises when we treat the expert's opinion as conclusive proof without examining the evidence or the limits of their expertise.",
+                definition: "Treating a claim as true or settled simply because an authority figure (expert, celebrity, institution) said so, without providing supporting evidence or considering whether the authority is relevant and unbiased.",
+                nuances: "Appeals to legitimate expertise are often reasonable starting points (doctors on medicine, climate scientists on climate). The fallacy is when the authority is irrelevant, conflicted, or treated as infallible. 'Dr. Oz said it' is not evidence.",
+                examples: [
+                    { context: "Health / Marketing", text: "\"This supplement is effective because a celebrity doctor with 2 million followers recommended it on Instagram.\"" },
+                    { context: "Policy", text: "\"We should implement this economic policy because Nobel laureate X signed the letter.\" (without engaging the actual models or data)" }
+                ],
+                mnemonic: "Auth Appeal — The robes of authority don't make the words true. Check the evidence, not the title or follower count.",
+                innerTrigger: "You want to believe something because a smart or famous person you admire said it, so you stop looking for primary evidence. 'If [expert] says it, it must be right.'",
+                responseGuide: "\"I respect their expertise, but expertise isn't a substitute for evidence on this specific claim. What data or reasoning supports it?\"",
+                related: [10, 19]
+            },
+            {
+                id: 4,
+                short: "Either Or",
+                syllables: "3 syl",
+                fullNames: ["False Dilemma", "Either/Or Fallacy", "Black-and-White Thinking"],
+                category: "Reasoning",
+                etymology: "Also called the false dilemma or bifurcation. It artificially restricts options to two extremes, ignoring the spectrum of possibilities, compromises, or alternative framings that usually exist in complex situations.",
+                definition: "Presenting only two options as if they are the only possibilities, when in reality more nuanced or moderate choices exist.",
+                nuances: "Sometimes used rhetorically for effect ('You're either part of the solution or part of the problem'). Becomes fallacious when it shuts down legitimate middle paths or trade-offs. Very common in polarized political discourse.",
+                examples: [
+                    { context: "Politics", text: "\"You're either with us or against us. There's no middle ground on this issue.\"" },
+                    { context: "Personal Decision", text: "\"If I don't take this high-paying job that drains my soul, I'll be poor and miserable forever.\"" }
+                ],
+                mnemonic: "Either Or — Two doors, both terrible, but the hallway between them is ignored. Look for the third (and fourth) options.",
+                innerTrigger: "When facing a hard choice or defending a position, your mind collapses options into 'this or disaster' to avoid the discomfort of nuance or trade-offs.",
+                responseGuide: "\"I don't accept that those are the only two options. There are usually several paths between the extremes. What are we missing?\"",
+                related: [18, 5]
+            },
+            {
+                id: 5,
+                short: "Slippery Slope",
+                syllables: "4 syl",
+                fullNames: ["Slippery Slope Fallacy"],
+                category: "Causal",
+                etymology: "The image of someone standing at the top of a steep, icy slope — one small step and they inevitably slide all the way to the bottom with no way to stop. The fallacy name became common in the mid-20th century, though the underlying concern about chains of consequence is ancient.",
+                definition: "Claiming that a relatively small first step will inevitably lead to a chain of related (usually disastrous) events without providing evidence that the chain is likely or unstoppable.",
+                nuances: "Some slopes are real (domino effects with clear mechanisms). The fallacy is in asserting inevitability without evidence or ignoring possible stopping points or counter-forces. Often used in policy debates around rights and regulations.",
+                examples: [
+                    { context: "Education / Tech", text: "\"If we let students use phones in class, soon they'll never learn anything, attention spans will collapse, and society will fall apart.\"" },
+                    { context: "Rights", text: "\"If we allow this small exception to privacy, the government will eventually monitor every aspect of our lives.\"" }
+                ],
+                mnemonic: "Slippery Slope — One step, then doom. Ask: 'What mechanism makes the next steps inevitable? Where could we stop it?'",
+                innerTrigger: "Fear of change or loss of control makes you imagine the worst possible chain reaction to justify resistance. 'If I give an inch here, everything collapses.'",
+                responseGuide: "\"I share your concern about where this could lead, but we need evidence of the causal chain, not just the fear of it. What specific mechanisms make the bad outcomes unavoidable?\"",
+                related: [11, 4]
+            },
+            {
+                id: 6,
+                short: "Circle Logic",
+                syllables: "3 syl",
+                fullNames: ["Circular Reasoning", "Begging the Question"],
+                category: "Presumption",
+                etymology: "From Latin petitio principii — 'assuming the initial point.' The argument goes in a circle: the conclusion is smuggled into the premise, so the reasoning never actually moves forward. 'Begging the question' originally meant this; modern casual use ('that begs the question...') is slightly different.",
+                definition: "The conclusion is assumed in the premise. The argument restates the claim in different words instead of providing independent support.",
+                nuances: "Can be subtle and convincing when language is complex. Common in ideological systems where core beliefs are treated as self-evident. In personal life, it protects worldviews from challenge.",
+                examples: [
+                    { context: "Policy / Debate", text: "\"This policy is the right thing to do because it's morally correct, and we know it's morally correct because it's the right policy to implement.\"" },
+                    { context: "Self", text: "\"I know my plan will work because I'm the kind of person who succeeds at things like this.\"" }
+                ],
+                mnemonic: "Circle Logic — The answer is hiding inside the question. If removing the conclusion makes the premise collapse, it's circular.",
+                innerTrigger: "You hold a belief so strongly that any supporting 'evidence' is just a rephrasing of the belief itself. Challenging it feels like attacking reality.",
+                responseGuide: "\"We're going in circles. The claim that it's 'the right thing' is what we're trying to establish. What independent evidence or reasoning shows that?\"",
+                related: [12, 17]
+            },
+            {
+                id: 7,
+                short: "Hasty Gen",
+                syllables: "3 syl",
+                fullNames: ["Hasty Generalization", "Faulty Generalization"],
+                category: "Evidence",
+                etymology: "Also called 'jumping to conclusions.' The error of drawing a broad rule from an insufficient or unrepresentative sample. Common in inductive reasoning gone wrong.",
+                definition: "Making a broad generalization based on too small a sample, atypical examples, or insufficient evidence.",
+                nuances: "All generalizations are inductive and carry some risk. The fallacy is in treating a weak induction as certain or in ignoring contradictory evidence. Stereotypes often originate here.",
+                examples: [
+                    { context: "Social / Travel", text: "\"I visited two cities in that country and the people were rude. Everyone there must be unfriendly.\"" },
+                    { context: "The image in query", text: "Claiming broad motivation failures from observing a subset of people using AI in limited ways (the exact example that prompted this codex)." }
+                ],
+                mnemonic: "Hasty Gen — One or two data points, giant conclusion. Ask: 'How many examples would actually be needed to support this?'",
+                innerTrigger: "A negative (or positive) experience with one or two members of a group makes you paint the whole group to justify your feelings or decisions. Protects you from having to update your model.",
+                responseGuide: "\"That's a pretty big leap from a small sample. What would change your view if we saw more data?\"",
+                related: [19, 20]
+            },
+            {
+                id: 8,
+                short: "Red Herring",
+                syllables: "3 syl",
+                fullNames: ["Red Herring Fallacy"],
+                category: "Relevance",
+                etymology: "From the practice of using a smoked, strong-smelling herring to train or distract hunting dogs from following a scent trail. The irrelevant topic pulls attention away from the real issue.",
+                definition: "Introducing an irrelevant topic or piece of information to divert attention away from the original issue or argument.",
+                nuances: "Extremely common in politics, media, and personal arguments. The new topic may be emotionally charged or true, but it doesn't address the question at hand. Often combined with other fallacies.",
+                examples: [
+                    { context: "Crime / Policy Debate", text: "Discussion about rising violent crime rates is met with: \"But remember how the previous administration fixed all those potholes?\"" },
+                    { context: "Relationship", text: "\"We need to talk about how you spoke to me yesterday.\" Response: \"Well at least I don't spend money like you do!\"" }
+                ],
+                mnemonic: "Red Herring — Throw a smelly fish across the trail. The new topic smells important but leads nowhere on the original question.",
+                innerTrigger: "The current topic makes you uncomfortable or you don't have a good answer, so you change the subject to something you feel stronger about or that embarrasses the other person.",
+                responseGuide: "\"That's an interesting point, but it's moving us away from the original question. Can we finish discussing [original topic] first?\"",
+                related: [1, 9]
+            },
+            {
+                id: 9,
+                short: "Feel Appeal",
+                syllables: "3 syl",
+                fullNames: ["Appeal to Emotion", "Emotional Appeal"],
+                category: "Relevance",
+                etymology: "Includes several Latin forms: ad misericordiam (pity), ad metum (fear), ad populum (popularity as emotional). The tactic bypasses reason by activating strong feelings that make critical evaluation harder.",
+                definition: "Manipulating emotions (fear, pity, anger, guilt, pride) in place of logical argument or evidence to persuade.",
+                nuances: "Emotions are not inherently irrational — they can be appropriate responses. The fallacy is when emotion is used as a substitute for evidence or to shut down questioning. 'Think of the children' is the classic.",
+                examples: [
+                    { context: "Politics / Policy", text: "\"If you don't support this bill, you clearly don't care about the suffering of [vulnerable group].\"" },
+                    { context: "Sales / Persuasion", text: "Fear-based marketing: \"Without this protection, your family could be ruined by one unexpected event.\"" }
+                ],
+                mnemonic: "Feel Appeal — Make them feel it so hard they stop thinking. Strong emotion + weak evidence = classic tell.",
+                innerTrigger: "You use emotional language or imagery to win an argument or avoid a difficult truth because the logical case is weak. Or you let your own emotions short-circuit evidence checking.",
+                responseGuide: "\"I understand why this feels urgent and emotional. But feelings, however valid, aren't evidence for the specific claim. What are the facts?\"",
+                related: [8, 3]
+            },
+            {
+                id: 10,
+                short: "Bandwagon",
+                syllables: "3 syl",
+                fullNames: ["Bandwagon Fallacy", "Appeal to Popularity", "Argumentum ad Populum"],
+                category: "Evidence",
+                etymology: "From the image of a bandwagon in a parade or political campaign — everyone wants to jump on once it's moving and popular. The underlying assumption is 'if so many people believe/do it, it must be right/good.'",
+                definition: "Arguing that something is true, good, or correct simply because many (or most) people believe or do it.",
+                nuances: "Popularity can be a weak signal in some domains (market validation), but it's never proof of truth. Majorities have been wrong about many things throughout history. Social proof is powerful psychology, which is why the fallacy works.",
+                examples: [
+                    { context: "Investing / Crypto", text: "\"Everyone is buying this coin right now. You should get in before it's too late.\"" },
+                    { context: "Social / Culture", text: "\"All my friends think this way about the issue. How can so many people be wrong?\"" }
+                ],
+                mnemonic: "Bandwagon — Jump on because it's moving. The number of passengers doesn't change whether the wagon is heading off a cliff.",
+                innerTrigger: "You feel social pressure or FOMO. Instead of evaluating on merits, you adopt the view because belonging feels safer than independent judgment.",
+                responseGuide: "\"Popularity isn't evidence. Many widely held beliefs turned out to be false. What makes this one different?\"",
+                related: [3, 7]
+            },
+            {
+                id: 11,
+                short: "Post Hoc",
+                syllables: "2 syl",
+                fullNames: ["Post Hoc Ergo Propter Hoc", "False Cause"],
+                category: "Causal",
+                etymology: "Latin: 'after this, therefore because of this.' One of the oldest named fallacies, discussed by Aristotle. Confuses temporal sequence with causation.",
+                definition: "Assuming that because one event followed another, the first event caused the second.",
+                nuances: "Correlation vs causation is the core issue. Many real causal relationships are discovered through noticing sequences, but sequence alone is never sufficient proof. Superstition and much pseudoscience live here.",
+                examples: [
+                    { context: "Sports / Superstition", text: "\"I wore my lucky socks and the team won. The socks caused the win.\"" },
+                    { context: "Health", text: "\"I started taking this supplement and my energy improved two weeks later. It must be working.\"" }
+                ],
+                mnemonic: "Post Hoc — After it, because of it. Sequence is not proof. Demand mechanism and ruling out other causes.",
+                innerTrigger: "You notice two things happened close together and your brain wants a simple story. Especially when it confirms what you already wanted to believe.",
+                responseGuide: "\"Just because B happened after A doesn't mean A caused B. What other factors changed? Is there a plausible mechanism?\"",
+                related: [5, 19]
+            },
+            {
+                id: 12,
+                short: "Ignor Call",
+                syllables: "3 syl",
+                fullNames: ["Appeal to Ignorance", "Argument from Ignorance"],
+                category: "Evidence",
+                etymology: "From Latin argumentum ad ignorantiam. The error of treating lack of proof or disproof as positive evidence for a claim.",
+                definition: "Claiming something is true because it has not been proven false (or false because it has not been proven true).",
+                nuances: "Absence of evidence is not evidence of absence when investigation has been insufficient. However, in some contexts (extraordinary claims), demanding positive evidence is reasonable. The burden of proof matters.",
+                examples: [
+                    { context: "Pseudoscience", text: "\"No one has proven that [conspiracy theory] is false, so it must be true.\"" },
+                    { context: "Everyday", text: "\"We've never seen evidence of life on other planets, so we're probably alone in the universe.\"" }
+                ],
+                mnemonic: "Ignor Call — 'Nobody proved it wrong, therefore right.' The absence of disproof is not proof. Demand positive evidence.",
+                innerTrigger: "You want something to be true (or false) and there is no conclusive evidence either way, so you treat the lack of counter-evidence as support for your preferred conclusion.",
+                responseGuide: "\"Lack of disproof isn't proof. Extraordinary claims require positive evidence. What would count as good evidence for this?\"",
+                related: [6, 23]
+            },
+            {
+                id: 13,
+                short: "You Too",
+                syllables: "2 syl",
+                fullNames: ["Tu Quoque", "You Too Fallacy", "Hypocrisy Charge"],
+                category: "Relevance",
+                etymology: "Latin for 'you too' or 'you're another one.' A specific form of ad hominem that dismisses criticism by pointing out the critic's own hypocrisy or past inconsistency.",
+                definition: "Rejecting an argument or criticism by accusing the critic of hypocrisy or of having done the same thing themselves.",
+                nuances: "Pointing out hypocrisy can be relevant when credibility or consistency is the issue. It becomes fallacious when used to avoid addressing the actual criticism. Two wrongs don't make a right.",
+                examples: [
+                    { context: "Personal Health", text: "\"You tell me I should quit smoking, but you used to smoke for ten years!\"" },
+                    { context: "Politics", text: "\"How can you criticize the current administration for deficits when your party ran even larger ones?\"" }
+                ],
+                mnemonic: "You Too — 'But you did it too!' Two wrongs still don't make the original criticism disappear.",
+                innerTrigger: "Someone points out a flaw in your behavior or argument. Instead of addressing it, you search for their similar flaw to neutralize the discomfort.",
+                responseGuide: "\"Even if I'm guilty of the same thing, that doesn't make the criticism of me invalid. Let's talk about whether the point itself is correct.\"",
+                related: [2, 22]
+            },
+            {
+                id: 14,
+                short: "No True Scot",
+                syllables: "3 syl",
+                fullNames: ["No True Scotsman", "No True [X]"],
+                category: "Definition",
+                etymology: "Coined in 1975 by philosopher Antony Flew. From a dialogue: 'No Scotsman puts sugar on his porridge.' When told of a Scotsman who does, the reply is 'No true Scotsman puts sugar on his porridge.' The category is redefined to exclude counterexamples.",
+                definition: "After a counterexample to a claim is presented, the claimant redefines the category or adds an ad hoc condition to exclude the counterexample and preserve the original claim.",
+                nuances: "Often used to protect group identity or ideological purity. Can be subtle: 'real' patriots, 'true' fans, 'actual' scientists, etc. Makes falsification impossible.",
+                examples: [
+                    { context: "Group Identity", text: "\"No true patriot would ever criticize the government during wartime.\" (After someone does)" },
+                    { context: "Community", text: "\"No real [group member] would support that policy. They're not one of us.\"" }
+                ],
+                mnemonic: "No True Scot — Move the goalposts of belonging after the play. 'Real X' is often a warning sign.",
+                innerTrigger: "Someone in your in-group does something that challenges your narrative about the group. You protect the narrative by excommunicating them from the 'true' version of the group.",
+                responseGuide: "\"It sounds like you're redefining who counts as a 'true' member after seeing behavior you don't like. What was the original definition?\"",
+                related: [22, 6]
+            },
+            {
+                id: 15,
+                short: "Word Shift",
+                syllables: "2 syl",
+                fullNames: ["Equivocation", "Ambiguity Fallacy"],
+                category: "Language",
+                etymology: "From Latin aequivocus — 'of equal voice' or having the same name but different meanings. The word shifts meaning mid-argument without acknowledgment.",
+                definition: "Using a word or phrase with multiple meanings in different parts of the argument, so the conclusion only follows if the meanings are illegitimately treated as identical.",
+                nuances: "Often plays on emotionally loaded or vague terms like 'freedom,' 'natural,' 'rights,' 'fair,' 'love,' etc. Can be unintentional due to sloppy language or deliberate.",
+                examples: [
+                    { context: "Classic", text: "\"A feather is light. What is light cannot be dark. Therefore, a feather cannot be dark.\" (Light = weight vs. light = illumination)" },
+                    { context: "Modern", text: "\"We need to protect free speech. Canceling this speaker is an attack on free speech.\" (Equating private platform decisions with government censorship)" }
+                ],
+                mnemonic: "Word Shift — Same word, different game. When a key term quietly changes meaning, the logic breaks.",
+                innerTrigger: "You use a flexible word in one sense to make a point, then shift to another sense when challenged, without noticing the slide.",
+                responseGuide: "\"I think the word [X] is being used in two different ways here. Can we define it clearly and stick to one meaning?\"",
+                related: [6, 1]
+            },
+            {
+                id: 16,
+                short: "Gene Fault",
+                syllables: "2 syl",
+                fullNames: ["Genetic Fallacy"],
+                category: "Relevance",
+                etymology: "Judging something based on its origin, source, or history rather than its current properties or merits. 'Genetic' here refers to genesis/origin, not DNA.",
+                definition: "Dismissing or accepting an idea, claim, or thing based solely on where it came from or who originated it, rather than evaluating it on its own merits.",
+                nuances: "Origin can be relevant information (e.g., a study funded by interested parties), but it is not conclusive. The fallacy is treating origin as decisive. Also called 'poisoning the well' when done preemptively.",
+                examples: [
+                    { context: "Ideas / Economics", text: "\"That policy idea came out of a socialist think tank, so it has to be wrong.\"" },
+                    { context: "Personal", text: "\"I don't trust that advice — it came from someone who failed at the same thing years ago.\"" }
+                ],
+                mnemonic: "Gene Fault — Judge the fruit by the tree's roots instead of tasting it. Origin story is data, not verdict.",
+                innerTrigger: "You dislike the source of an idea (person, group, era, country), so you reject the idea without examining its content.",
+                responseGuide: "\"Where an idea comes from is interesting background, but it doesn't tell us whether the idea itself is good or bad. Let's look at it directly.\"",
+                related: [2, 17]
+            },
+            {
+                id: 17,
+                short: "Old Way",
+                syllables: "2 syl",
+                fullNames: ["Appeal to Tradition", "Argument from Antiquity"],
+                category: "Presumption",
+                etymology: "Also called argumentum ad antiquitatem. The assumption that something is better or correct simply because it is old, traditional, or 'how we've always done it.'",
+                definition: "Arguing that a practice, belief, or institution is good, true, or correct primarily because it has existed for a long time or is traditional.",
+                nuances: "Tradition can encode hard-won wisdom and stability. The fallacy is treating age as sufficient justification without examining whether the reasons for the tradition still hold or whether better alternatives now exist.",
+                examples: [
+                    { context: "Work / Culture", text: "\"We've always held this meeting on Friday mornings. We shouldn't change it.\"" },
+                    { context: "Society", text: "\"Marriage has been between one man and one woman for thousands of years. We shouldn't redefine it.\"" }
+                ],
+                mnemonic: "Old Way — 'We've always done it this way' is not a reason. It might be inertia wearing the costume of wisdom.",
+                innerTrigger: "Change feels threatening. You defend the status quo by appealing to its longevity rather than its current fitness for purpose.",
+                responseGuide: "\"Tradition is a data point about what worked in the past. But conditions change. What reasons made this tradition successful then, and do they still apply?\"",
+                related: [6, 14]
+            },
+            {
+                id: 18,
+                short: "Middle Way",
+                syllables: "3 syl",
+                fullNames: ["Middle Ground Fallacy", "False Compromise"],
+                category: "Reasoning",
+                etymology: "Also called the golden mean fallacy. The assumption that the truth or best position must always lie in the moderate middle between two extremes.",
+                definition: "Assuming that the compromise or middle position between two opposing views is automatically correct or superior, without evaluating the actual merits.",
+                nuances: "Sometimes the middle is best; often it is not (e.g., one side says '2+2=4', the other says '2+2=5', the middle '2+2=4.5' is still wrong). The fallacy is automatic deference to moderation.",
+                examples: [
+                    { context: "Budget / Policy", text: "\"One side wants $0 spending on this program, the other wants $100 million. The fair amount must be around $50 million.\"" },
+                    { context: "Science / Debate", text: "\"Some scientists say climate change is urgent, others say it's not a big deal. The truth is probably somewhere in the middle.\"" }
+                ],
+                mnemonic: "Middle Way — Split the difference and call it wisdom. Sometimes the middle is just two wrongs averaged.",
+                innerTrigger: "You want to appear reasonable and non-extreme. You split the difference to avoid the discomfort of picking a side that might be mostly right or mostly wrong.",
+                responseGuide: "\"The truth isn't always in the middle. One side might be largely correct and the other largely incorrect. We should evaluate the evidence, not split it.\"",
+                related: [4, 21]
+            },
+            {
+                id: 19,
+                short: "Cherry Pick",
+                syllables: "3 syl",
+                fullNames: ["Cherry Picking", "Selective Evidence"],
+                category: "Evidence",
+                etymology: "From the image of picking only the ripest, best-looking cherries from a tree while ignoring the rest. You present only the evidence that supports your view.",
+                definition: "Selectively presenting only evidence that supports your position while ignoring or suppressing contradictory evidence.",
+                nuances: "One of the most common and damaging fallacies in science communication, politics, and personal rationalization. The internet makes it easy to find supporting anecdotes for almost anything.",
+                examples: [
+                    { context: "Health / Anecdote", text: "\"This treatment works great — I felt better the day after I started it.\" (While ignoring later deterioration and controlled studies)" },
+                    { context: "Politics", text: "Citing only the economic indicators that improved under your preferred party while ignoring those that worsened." }
+                ],
+                mnemonic: "Cherry Pick — Show only the shiny fruit. Demand the full tree or the whole orchard.",
+                innerTrigger: "You have a conclusion you want to protect. You unconsciously (or consciously) filter memory and sources to keep only confirming instances.",
+                responseGuide: "\"This looks like cherry picking. What does the rest of the evidence show? Are there studies or data points that go the other way?\"",
+                related: [7, 20]
+            },
+            {
+                id: 20,
+                short: "One Tale",
+                syllables: "2 syl",
+                fullNames: ["Anecdotal Evidence", "Anecdote Fallacy"],
+                category: "Evidence",
+                etymology: "From Greek anekdotos — 'unpublished' or 'not given out.' The error of treating a single personal story as strong evidence for a general claim.",
+                definition: "Using a personal story or single example as sufficient proof for a broad generalization, while ignoring systematic data.",
+                nuances: "Anecdotes are emotionally powerful and can be useful for illustration or hypothesis generation. They become fallacious when treated as conclusive or when they override better evidence. 'My uncle smoked every day and lived to 95' is the classic.",
+                examples: [
+                    { context: "Health / Lifestyle", text: "\"My cousin smoked a pack a day and lived to 92 with no problems. Smoking can't be that bad.\"" },
+                    { context: "Product / Review", text: "\"I tried this new productivity system for three days and got more done than ever. Everyone should use it.\"" }
+                ],
+                mnemonic: "One Tale — One story to rule them all. Vivid stories feel true but are statistically weak.",
+                innerTrigger: "You have a strong personal experience that confirms what you want to believe. You use it to override data or other people's different experiences.",
+                responseGuide: "\"Personal stories are powerful, but one person's experience doesn't prove a general rule. What does the broader data show?\"",
+                related: [7, 19]
+            },
+            {
+                id: 21,
+                short: "False Match",
+                syllables: "2 syl",
+                fullNames: ["False Equivalence", "False Comparison"],
+                category: "Reasoning",
+                etymology: "Treating two things as equivalent or comparable in a morally or factually significant way when they are not similar enough in the relevant respects.",
+                definition: "Incorrectly treating two different things as if they are the same or of equal value/severity, ignoring important differences.",
+                nuances: "Common in 'both sides' rhetoric. 'Both candidates lied once, so they're equally dishonest' ignores scale, frequency, intent, and consequence. Also appears in moral comparisons.",
+                examples: [
+                    { context: "Politics / Media", text: "\"Both parties have engaged in misleading statements, so they're equally untrustworthy.\"" },
+                    { context: "Personal", text: "\"You were late once and I forgot our anniversary once. We're even.\"" }
+                ],
+                mnemonic: "False Match — Two things look similar from a distance. Up close, the differences in scale or kind matter.",
+                innerTrigger: "You want to appear balanced or to minimize your own fault. You equate things that are not equivalent to create false symmetry.",
+                responseGuide: "\"These aren't equivalent. One involves [scale/frequency/intent difference]. Let's compare them accurately.\"",
+                related: [18, 4]
+            },
+            {
+                id: 22,
+                short: "Goal Move",
+                syllables: "2 syl",
+                fullNames: ["Moving the Goalposts", "Shifting Standards"],
+                category: "Presumption",
+                etymology: "From American football and other sports: after the opposing team has advanced the ball to the goal line, the defense moves the goalposts farther away so the score is never achieved.",
+                definition: "After the other party has met the original criteria or standard, unilaterally changing the requirements or standards to make success impossible or more difficult.",
+                nuances: "Often used unconsciously in arguments or consciously in negotiations and bureaucracies. Destroys trust because the rules are revealed to be arbitrary.",
+                examples: [
+                    { context: "Job / Hiring", text: "\"You need a bachelor's degree.\" (Candidate earns one) \"Actually, we now require a master's degree for this role.\"" },
+                    { context: "Relationship", text: "\"If you just did X, I'd be happy.\" (X is done) \"Well, now I realize Y is also necessary.\"" }
+                ],
+                mnemonic: "Goal Move — Score the touchdown, then watch the posts slide back. The standard was never the real standard.",
+                innerTrigger: "You are uncomfortable admitting the other person met your stated criteria, so you invent new ones to preserve your position or avoid giving credit/conceding.",
+                responseGuide: "\"We agreed on these criteria earlier. Moving them now makes it impossible to satisfy you. Let's stick to the original standard or openly renegotiate.\"",
+                related: [14, 13]
+            },
+            {
+                id: 23,
+                short: "Burden Flip",
+                syllables: "3 syl",
+                fullNames: ["Shifting the Burden of Proof", "Appeal to Ignorance (reversed)"],
+                category: "Evidence",
+                etymology: "From the legal principle 'onus probandi' — the burden of proof lies with the party making the affirmative claim. The fallacy reverses this: demanding the skeptic disprove the claim instead of providing evidence for it.",
+                definition: "Making a claim and then insisting that others must disprove it, rather than providing evidence or reasoning to support the claim yourself.",
+                nuances: "Especially common with extraordinary or unfalsifiable claims (conspiracy theories, pseudoscience, supernatural assertions). 'Prove me wrong' is the tell. In science and law, the burden is on the positive claim.",
+                examples: [
+                    { context: "Pseudoscience", text: "\"I believe this crystal heals people. If you disagree, prove that it doesn't.\"" },
+                    { context: "Conspiracy", text: "\"The election was stolen. Show me the evidence that it wasn't.\"" }
+                ],
+                mnemonic: "Burden Flip — Make the claim, then hand the other person the homework. The person asserting should carry the proof.",
+                innerTrigger: "You make a strong claim with weak support. Instead of doing the work to substantiate it, you challenge others to do the impossible work of proving a negative.",
+                responseGuide: "\"The burden is on the person making the claim to provide evidence. I'm not obligated to disprove every assertion. What positive evidence do you have?\"",
+                related: [12, 6]
+            }
+        ]
+        
+        // Current modal state
+        let currentFallacyId = null
+        
+        // Render the grid of fallacy cards
+        function renderFallacyGrid(filteredData = null) {
+            const grid = document.getElementById('fallacy-grid')
+            grid.innerHTML = ''
+            
+            const dataToShow = filteredData || fallaciesData
+            
+            dataToShow.forEach(f => {
+                const card = document.createElement('div')
+                card.className = `fallacy-card bg-slate-900 border border-slate-700 hover:border-cyan-800 rounded-3xl p-5 cursor-pointer flex flex-col`
+                card.onclick = () => showFallacyDetail(f.id)
+                
+                card.innerHTML = `
+                    <div class="flex items-start justify-between mb-3">
+                        <div class="fallacy-number w-8 h-8 rounded-2xl flex items-center justify-center text-sm font-bold flex-shrink-0">${f.id}</div>
+                        <div class="syllable-badge px-2 py-0.5 text-[10px]">${f.syllables}</div>
+                    </div>
+                    
+                    <div class="font-display text-2xl tracking-tighter font-semibold mb-1">${f.short}</div>
+                    
+                    <div class="text-sm text-slate-400 line-clamp-3 flex-1 mb-4">
+                        ${f.definition.substring(0, 140)}${f.definition.length > 140 ? '...' : ''}
+                    </div>
+                    
+                    <div class="flex items-center justify-between text-xs">
+                        <div class="text-cyan-400 font-medium flex items-center gap-x-1">
+                            <span>Deep dive</span> 
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </div>
+                        <div class="text-slate-500">${f.category}</div>
+                    </div>
+                `
+                grid.appendChild(card)
+            })
+        }
+        
+        // Filter function
+        function filterFallacies() {
+            const term = document.getElementById('search-input').value.toLowerCase().trim()
+            
+            if (!term) {
+                renderFallacyGrid()
+                return
+            }
+            
+            const filtered = fallaciesData.filter(f => 
+                f.short.toLowerCase().includes(term) ||
+                f.definition.toLowerCase().includes(term) ||
+                f.fullNames.join(' ').toLowerCase().includes(term) ||
+                f.category.toLowerCase().includes(term) ||
+                (f.mnemonic && f.mnemonic.toLowerCase().includes(term))
+            )
+            
+            renderFallacyGrid(filtered)
+        }
+        
+        // Show detail modal
+        function showFallacyDetail(id) {
+            const f = fallaciesData.find(item => item.id === id)
+            if (!f) return
+            
+            currentFallacyId = id
+            
+            // Header
+            document.getElementById('modal-number-badge').innerHTML = f.id
+            document.getElementById('modal-short-name').innerHTML = f.short
+            document.getElementById('modal-syllables').innerHTML = `${f.syllables} • ${f.category}`
+            
+            // Body content
+            const body = document.getElementById('modal-body')
+            body.innerHTML = `
+                <div>
+                    <div class="detail-label mb-1">Also Known As</div>
+                    <div class="text-slate-300">${f.fullNames.join(' • ')}</div>
+                </div>
+                
+                <div>
+                    <div class="detail-label mb-1.5">Etymology &amp; Origin</div>
+                    <div class="prose-custom text-slate-300">${f.etymology}</div>
+                </div>
+                
+                <div>
+                    <div class="detail-label mb-1.5">What It Actually Is</div>
+                    <div class="prose-custom text-slate-200">${f.definition}</div>
+                </div>
+                
+                <div>
+                    <div class="detail-label mb-1.5">Nuances &amp; When It's Not a Fallacy</div>
+                    <div class="prose-custom text-slate-300">${f.nuances}</div>
+                </div>
+                
+                <div>
+                    <div class="detail-label mb-2">Real-World Examples</div>
+                    ${f.examples.map(ex => `
+                        <div class="example-box mb-3 p-4 rounded-2xl">
+                            <div class="text-xs text-cyan-400 font-semibold mb-1">${ex.context}</div>
+                            <div class="text-sm italic text-slate-300">"${ex.text}"</div>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="mnemonic-box p-5 rounded-3xl">
+                    <div class="flex items-center gap-x-2 mb-2">
+                        <i class="fa-solid fa-lightbulb text-cyan-300"></i>
+                        <div class="detail-label text-cyan-300">Memory Hook</div>
+                    </div>
+                    <div class="text-white font-medium">${f.mnemonic}</div>
+                </div>
+                
+                <div class="trigger-box p-5 rounded-3xl">
+                    <div class="flex items-center gap-x-2 mb-2">
+                        <i class="fa-solid fa-user-secret text-amber-400"></i>
+                        <div class="detail-label text-amber-400">Inner Dialogue Trigger</div>
+                    </div>
+                    <div class="text-slate-200">${f.innerTrigger}</div>
+                    <div class="mt-3 text-xs text-amber-300/80">When you notice this pattern in your own thinking, pause and ask: "Am I protecting comfort or seeking truth right now?"</div>
+                </div>
+                
+                <div>
+                    <div class="detail-label mb-2 flex items-center gap-x-2">
+                        <i class="fa-solid fa-comments text-emerald-400"></i>
+                        <span>How to Call It Out Constructively</span>
+                    </div>
+                    <div class="bg-emerald-950/30 border border-emerald-900 p-5 rounded-2xl text-sm text-emerald-100">
+                        ${f.responseGuide}
+                    </div>
+                    <div class="mt-2 text-xs text-emerald-400/70">The goal is not to win or shame — it's to give the other person (or yourself) a chance to self-correct with dignity.</div>
+                </div>
+                
+                ${f.related && f.related.length ? `
+                <div>
+                    <div class="detail-label mb-2">Often Appears With</div>
+                    <div class="flex flex-wrap gap-2">
+                        ${f.related.map(rid => {
+                            const rel = fallaciesData.find(x => x.id === rid)
+                            return rel ? `<span onclick="showFallacyDetail(${rid}); event.stopImmediatePropagation()" class="cursor-pointer inline-block px-3 py-1 bg-slate-800 hover:bg-slate-700 text-xs rounded-2xl">${rel.short}</span>` : ''
+                        }).join('')}
+                    </div>
+                </div>` : ''}
+            `
+            
+            document.getElementById('detail-modal').classList.remove('hidden')
+            document.getElementById('detail-modal').classList.add('flex')
+        }
+        
+        function hideModal() {
+            const modal = document.getElementById('detail-modal')
+            modal.classList.remove('flex')
+            modal.classList.add('hidden')
+        }
+        
+        // Navigation in modal
+        function nextFallacy() {
+            if (!currentFallacyId) return
+            let nextId = currentFallacyId + 1
+            if (nextId > 23) nextId = 1
+            hideModal()
+            setTimeout(() => showFallacyDetail(nextId), 180)
+        }
+        
+        function prevFallacy() {
+            if (!currentFallacyId) return
+            let prevId = currentFallacyId - 1
+            if (prevId < 1) prevId = 23
+            hideModal()
+            setTimeout(() => showFallacyDetail(prevId), 180)
+        }
+        
+        // Practice scenarios
+        const practiceScenarios = [
+            {
+                id: 1,
+                text: "In a team meeting: 'We tried a similar initiative two years ago and it failed. Therefore this new proposal is also doomed to fail.'",
+                correctId: 7, // Hasty Gen (or actually more like false cause / post hoc, but close enough; or Gene Fault. Let's say 11 or 7. Adjust: actually Post Hoc or Gene Fault. Use 11 Post Hoc)
+                feedback: "This is primarily Post Hoc or overgeneralizing from one past failure. The previous initiative's failure doesn't prove the new one (with different conditions, team, timing) will fail. Classic over-extrapolation from limited data."
+            },
+            {
+                id: 2,
+                text: "Friend: 'I think we should lower the voting age to 16.' You: 'So you want children deciding the future of the country? That's insane.'",
+                correctId: 1,
+                feedback: "Textbook Strawman. The original claim was about 16-year-olds (not 'children'), and the responder exaggerated it into something obviously absurd to attack."
+            },
+            {
+                id: 3,
+                text: "'Everyone I know is using this new AI tool and getting massive productivity gains. You should start using it immediately.'",
+                correctId: 10,
+                feedback: "Bandwagon / Appeal to Popularity. The fact that 'everyone' (in their circle) is doing it is presented as the reason you should, without evidence of actual gains or fit for your context."
+            },
+            {
+                id: 4,
+                text: "After being confronted about repeated lateness: 'Well, you forgot our anniversary last year, so you have no right to complain about me being on time.'",
+                correctId: 13,
+                feedback: "Tu Quoque / You Too. Instead of addressing the current pattern of lateness, the person deflects by pointing to the other person's past mistake. Two wrongs don't cancel the current issue."
+            },
+            {
+                id: 5,
+                text: "'I started this new supplement and within 48 hours my energy was through the roof. It's clearly working.'",
+                correctId: 11,
+                feedback: "Post Hoc. The energy improvement followed starting the supplement, but many other variables (sleep, diet, placebo, natural fluctuation) could explain it. Sequence ≠ causation without more evidence."
+            }
+        ]
+        
+        let currentScenarioIndex = 0
+        
+        function loadScenario(index) {
+            const scenario = practiceScenarios[index]
+            document.getElementById('scenario-num').textContent = String(scenario.id).padStart(2, '0')
+            document.getElementById('scenario-text').innerHTML = scenario.text
+            
+            // Render options
+            const optionsContainer = document.getElementById('fallacy-options')
+            optionsContainer.innerHTML = ''
+            
+            // Shuffle for variety but keep correct
+            const shuffled = [...fallaciesData].sort(() => Math.random() - 0.5).slice(0, 7)
+            
+            // Ensure correct one is included
+            if (!shuffled.find(s => s.id === scenario.correctId)) {
+                shuffled.pop()
+                shuffled.push(fallaciesData.find(f => f.id === scenario.correctId))
+            }
+            
+            shuffled.sort(() => Math.random() - 0.5)
+            
+            shuffled.forEach(f => {
+                const btn = document.createElement('button')
+                btn.className = `px-3 py-2 text-sm text-left bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-2xl transition-all active:scale-[0.985]`
+                btn.innerHTML = `<span class="font-medium">${f.short}</span> <span class="text-[10px] text-slate-500">(${f.syllables})</span>`
+                
+                btn.onclick = () => {
+                    const feedbackArea = document.getElementById('feedback-area')
+                    const content = document.getElementById('feedback-content')
+                    
+                    if (f.id === scenario.correctId) {
+                        content.innerHTML = `
+                            <div class="flex items-center gap-x-2 text-emerald-400 mb-2">
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span class="font-semibold">Correct — ${f.short}</span>
+                            </div>
+                            <div class="text-sm text-emerald-100">${scenario.feedback}</div>
+                            <div class="mt-4 text-xs text-emerald-300">Great catch. Now practice the constructive response in your head.</div>
+                        `
+                        feedbackArea.className = `mt-5 p-5 bg-emerald-950/30 border border-emerald-800 rounded-2xl`
+                    } else {
+                        content.innerHTML = `
+                            <div class="flex items-center gap-x-2 text-amber-400 mb-2">
+                                <i class="fa-solid fa-info-circle"></i>
+                                <span class="font-semibold">Not quite — you picked ${f.short}</span>
+                            </div>
+                            <div class="text-sm">The core pattern here is <strong>${fallaciesData.find(x => x.id === scenario.correctId).short}</strong>.</div>
+                            <div class="mt-3 text-xs text-amber-300">${scenario.feedback}</div>
+                        `
+                        feedbackArea.className = `mt-5 p-5 bg-amber-950/20 border border-amber-800 rounded-2xl`
+                    }
+                    
+                    feedbackArea.classList.remove('hidden')
+                    
+                    // Disable all buttons
+                    Array.from(optionsContainer.children).forEach(b => b.disabled = true)
+                }
+                
+                optionsContainer.appendChild(btn)
+            })
+            
+            // Hide previous feedback
+            document.getElementById('feedback-area').classList.add('hidden')
+        }
+        
+        function newScenario() {
+            currentScenarioIndex = (currentScenarioIndex + 1) % practiceScenarios.length
+            loadScenario(currentScenarioIndex)
+        }
+        
+        // Share functions
+        function showShareModal() {
+            document.getElementById('share-modal').classList.remove('hidden')
+            document.getElementById('share-modal').classList.add('flex')
+        }
+        
+        function hideShareModal() {
+            const m = document.getElementById('share-modal')
+            m.classList.remove('flex')
+            m.classList.add('hidden')
+        }
+        
+        function copyLink() {
+            navigator.clipboard.writeText('https://fallacy.ahightower.com').then(() => {
+                const btns = document.querySelectorAll('#share-modal button')
+                const originalText = btns[btns.length-1].innerHTML
+                btns[btns.length-1].innerHTML = `<i class="fa-solid fa-check mr-2"></i> Copied!`
+                setTimeout(() => {
+                    hideShareModal()
+                    // Reset for next time
+                }, 1200)
+            }).catch(() => {
+                alert('Link: https://fallacy.ahightower.com (copy manually)')
+                hideShareModal()
+            })
+        }
+        
+        // Keyboard support
+        function setupKeyboard() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === '/' && document.activeElement.tagName === 'BODY') {
+                    e.preventDefault()
+                    document.getElementById('search-input').focus()
+                }
+                
+                if (e.key === 'Escape') {
+                    const detail = document.getElementById('detail-modal')
+                    const share = document.getElementById('share-modal')
+                    
+                    if (!detail.classList.contains('hidden')) {
+                        hideModal()
+                    } else if (!share.classList.contains('hidden')) {
+                        hideShareModal()
+                    }
+                }
+                
+                if (e.key.toLowerCase() === '?' && document.getElementById('detail-modal').classList.contains('hidden')) {
+                    e.preventDefault()
+                    const grid = document.getElementById('fallacy-grid')
+                    if (grid.children.length > 0) {
+                        grid.children[0].click()
+                    }
+                }
+            })
+            
+            // Search hint
+            const search = document.getElementById('search-input')
+            search.placeholder = "Search fallacies (press / to focus)..."
+        }
+        
+        // Initialize everything
+        function initializeSite() {
+            initializeTailwind()
+            
+            // Render initial grid
+            renderFallacyGrid()
+            
+            // Load first practice scenario
+            loadScenario(0)
+            
+            // Keyboard
+            setupKeyboard()
+            
+            // Optional: pre-select a popular one on load for engagement (commented for clean start)
+            // setTimeout(() => { if (window.innerWidth > 900) document.getElementById('fallacy-grid').children[0].click() }, 1800)
+            
+            // Easter egg: clicking the logo scrolls to top
+            const logo = document.querySelector('nav .flex.items-center.gap-x-2\\.5')
+            if (logo) {
+                logo.style.cursor = 'pointer'
+                logo.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+            
+            console.log('%c[High Tower Codex] Fallacy site initialized. 23 fallacies loaded.', 'color:#64748b')
+        }
+        
+        // Boot
+        window.onload = initializeSite
+    </script>
+</body>
+</html>
